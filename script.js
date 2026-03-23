@@ -20,32 +20,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form submission mock
+    // Form submission logic - Redirect to WhatsApp
     const leadForm = document.getElementById('leadForm');
     if (leadForm) {
         leadForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            
+            // 🚨 COLOQUE AQUI O SEU NÚMERO DE WHATSAPP DA EMPRESA 🚨
+            // Formato: DDI + DDD + Número. Exemplo Brasil: 5541999999999
+            const numeroDaEmpresa = "5542999164041"; 
+            
+            // Captura os dados do fomulário
+            const nome = document.getElementById('name').value;
+            const whatsappDoCliente = document.getElementById('whatsapp').value;
+            const situacaoSelect = document.getElementById('status');
+            const situacaoTexto = situacaoSelect.options[situacaoSelect.selectedIndex].text;
+
             const btn = leadForm.querySelector('button[type="submit"]');
             const originalText = btn.textContent;
             
-            btn.textContent = 'Enviando...';
+            btn.textContent = 'Abrindo WhatsApp...';
             btn.disabled = true;
             btn.style.opacity = '0.7';
 
-            // Simulate API call
+            // Monta a mensagem que o cliente vai te enviar pronta
+            const mensagem = `Olá! Vim pelo site "Projeto Saia do Aluguel".\n\n*Meu Nome:* ${nome}\n*Meu WhatsApp:* ${whatsappDoCliente}\n*Minha situação:* ${situacaoTexto}\n\nGostaria de fazer um orçamento!`;
+            
+            // Codifica a mensagem para formato de link
+            const urlWhatsApp = `https://wa.me/${numeroDaEmpresa}?text=${encodeURIComponent(mensagem)}`;
+
+            // Redireciona o cliente para o seu WhatsApp com a mensagem pronta
+            window.open(urlWhatsApp, '_blank');
+            
+            // Reseta o botão após 2 segundos
             setTimeout(() => {
-                btn.textContent = 'Mensagem Enviada!';
-                btn.style.backgroundColor = '#468147'; // Darker green
-                
-                // Reset after 3 seconds
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                    btn.style.opacity = '1';
-                    btn.style.backgroundColor = '';
-                    leadForm.reset();
-                }, 3000);
-            }, 1500);
+                btn.textContent = originalText;
+                btn.disabled = false;
+                btn.style.opacity = '1';
+                leadForm.reset();
+            }, 2000);
         });
     }
 

@@ -550,4 +550,45 @@ footer {
     .contact-form-wrapper {
         padding: 24px;
     }
+
+    /* WhatsApp button in mobile */
+    .whatsapp-float {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+    }
+    .whatsapp-float svg {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* WhatsApp Float Button Default */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 65px;
+    height: 65px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 1000;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.whatsapp-float svg {
+    width: 38px;
+    height: 38px;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+    background-color: #128C7E;
 }
