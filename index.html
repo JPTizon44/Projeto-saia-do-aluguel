@@ -3,60 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto Saia do Aluguel | Construção Civil</title>
-    <meta name="description" content="O primeiro passo para construir sua casa própria e sair do aluguel. Entre em contato e faça seu orçamento.">
+    <title>Projeto Saia do Aluguel | Construção Civil Premium</title>
+    <meta name="description" content="O primeiro passo para construir sua casa própria e sair do aluguel. Realize o sonho do terreno + construção financiada pela Caixa. Faça seu orçamento.">
+    
+    <!-- Google Fonts: Outfit e Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
+    <!-- Progress Bar de Leitura -->
+    <div class="progress-bar-container">
+        <div class="progress-bar" id="scrollProgress"></div>
+    </div>
+
     <!-- Navbar -->
-    <header class="navbar">
+    <header class="navbar" id="navbar">
         <div class="container nav-container">
-            <div class="logo-container">
-                <!-- Recomendamos substituir por uma tag <img> com a imagem enviada -->
+            <div class="logo-container" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
                 <div class="logo-text">
                     <span class="logo-projeto">PROJETO</span>
                     <span class="logo-saia">Saia do aluguel</span>
                     <span class="logo-sub">CONSTRUÇÃO CIVIL</span>
                 </div>
             </div>
-            <nav class="nav-links">
+            
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <nav class="nav-links" id="nav-links">
                 <a href="#como-funciona">Como Funciona</a>
+                <a href="#processo">Nossos Passos</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#duvidas">Dúvidas</a>
                 <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Vim%20pelo%20site%20Projeto%20Saia%20do%20Aluguel." class="btn btn-outline" target="_blank" rel="noopener noreferrer">Fale Conosco</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1 class="fade-in-up">O seu sonho da casa própria começa <span class="text-highlight">agora</span>.</h1>
-            <p class="fade-in-up delay-1">Construímos o futuro da sua família com segurança, qualidade e um planejamento que cabe no seu bolso.</p>
-            <div class="hero-buttons fade-in-up delay-2">
-                <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Vim%20pelo%20site%20Projeto%20Saia%20do%20Aluguel." class="btn btn-primary btn-large glow-effect" target="_blank" rel="noopener noreferrer">Venha fazer um orçamento conosco</a>
+            <h1 class="scroll-reveal">O seu sonho da casa própria começa <span class="text-highlight">agora</span>.</h1>
+            <p class="scroll-reveal reveal-delay-1">Construímos o futuro da sua família com segurança, qualidade e um planejamento que cabe no seu bolso.</p>
+            <div class="hero-buttons scroll-reveal reveal-delay-2">
+                <a href="#contato" class="btn btn-primary btn-large glow-effect">Venha fazer um orçamento conosco</a>
             </div>
         </div>
     </section>
 
     <!-- CTA Section 1 -->
-    <section class="cta-banner primary-bg text-center">
+    <section class="cta-banner text-center scroll-reveal">
         <div class="container">
             <h2>Venha fechar a sua obra e transforme seu projeto em realidade!</h2>
+        </div>
+    </section>
+
+    <!-- Métricas / Contadores Section -->
+    <section class="metrics-section scroll-reveal">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-number" data-target="150">0</div>
+                    <p>Famílias Fora do Aluguel</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number" data-target="10">0</div>
+                    <p>Anos de Experiência</p>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-number" data-target="100">0</div>
+                    <p>% de Obras no Prazo</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- How it Works Section -->
     <section id="como-funciona" class="steps-section">
         <div class="container">
-            <h2 class="section-title text-center">Como Funciona?</h2>
-            <p class="section-subtitle text-center">O caminho para sair do aluguel em 3 passos simples.</p>
+            <h2 class="section-title text-center scroll-reveal">Como Funciona?</h2>
+            <p class="section-subtitle text-center scroll-reveal">O caminho para sair do aluguel em 3 passos simples.</p>
             
             <div class="steps-grid">
                 <!-- Step 1 -->
-                <div class="step-card">
+                <div class="step-card scroll-reveal reveal-delay-1">
                     <div class="step-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -67,7 +107,7 @@
                 </div>
                 
                 <!-- Step 2 -->
-                <div class="step-card">
+                <div class="step-card scroll-reveal reveal-delay-2">
                     <div class="step-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -78,7 +118,7 @@
                 </div>
                 
                 <!-- Step 3 -->
-                <div class="step-card">
+                <div class="step-card scroll-reveal reveal-delay-3">
                     <div class="step-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
@@ -91,61 +131,205 @@
         </div>
     </section>
 
+    <!-- Timeline Section (Processo) -->
+    <section id="processo" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title text-center scroll-reveal">O Caminho até Suas Chaves</h2>
+            <p class="section-subtitle text-center scroll-reveal">Nosso processo estruturado e transparente do primeiro contato até o dia da entrega.</p>
+            
+            <div class="timeline">
+                <!-- Item 1 -->
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content">
+                        <span>Passo 1</span>
+                        <h4>Simulação Caixa</h4>
+                        <p>Realizamos a sua simulação de financiamento (Aquisição de Terreno + Construção) de forma rápida e sem burocracia.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content">
+                        <span>Passo 2</span>
+                        <h4>Aprovação & Projetos</h4>
+                        <p>Cuidamos de toda a documentação de engenharia para aprovação da Caixa e elaboramos os projetos 3D sob medida.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content">
+                        <span>Passo 3</span>
+                        <h4>Construção e Obras</h4>
+                        <p>Nossa equipe qualificada assume o canteiro de obras com fiscalização técnica ativa e medições periódicas de evolução.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="timeline-item scroll-reveal">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content">
+                        <span>Passo 4</span>
+                        <h4>Entrega das Chaves!</h4>
+                        <p>Você recebe a sua casa nova pronta para morar. Diga adeus definitivo ao aluguel e comece uma nova história!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section 2 -->
-    <section class="cta-banner secondary-bg text-center">
+    <section class="cta-banner secondary-bg text-center scroll-reveal">
         <div class="container">
             <h2>Venha fazer parte da nossa família de clientes realizados!</h2>
+        </div>
+    </section>
+
+    <!-- Testimonials Carousel Section -->
+    <section id="depoimentos" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title text-center scroll-reveal">Histórias Reais</h2>
+            <p class="section-subtitle text-center scroll-reveal">Veja o depoimento de quem confiou em nosso trabalho e hoje tem um lar próprio.</p>
+            
+            <div class="carousel-container scroll-reveal">
+                <div class="carousel-track">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide">
+                        <div class="testimonial-card">
+                            <p class="testimonial-quote">"Sempre achamos que construir era um sonho distante. A equipe do Projeto Saia do Aluguel cuidou de tudo, da aprovação na Caixa até a entrega final. Hoje moramos no que é nosso e pagamos parcelas menores do que era o nosso aluguel!"</p>
+                              <div class="testimonial-author">
+                                  <div class="author-avatar">RF</div>
+                                  <div class="author-info">
+                                      <h5>Rodrigo & Fernanda Santos</h5>
+                                      <span>Ponta Grossa - PR</span>
+                                  </div>
+                              </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide">
+                        <div class="testimonial-card">
+                            <p class="testimonial-quote">"A transparência e o compromisso da equipe com o prazo foram incríveis. Recebemos a chave da nossa casa financiada de forma tranquila e antes do previsto. Indico de olhos fechados!"</p>
+                              <div class="testimonial-author">
+                                  <div class="author-avatar">MA</div>
+                                  <div class="author-info">
+                                      <h5>Mariana Almeida</h5>
+                                      <span>Castro - PR</span>
+                                  </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-dot active" aria-label="Slide 1"></button>
+                    <button class="carousel-dot" aria-label="Slide 2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section id="duvidas" class="faq-section">
+        <div class="container">
+            <h2 class="section-title text-center scroll-reveal">Perguntas Frequentes</h2>
+            <p class="section-subtitle text-center scroll-reveal">Tudo o que você precisa saber sobre o financiamento e a construção da sua casa.</p>
+            
+            <div class="faq-accordion scroll-reveal">
+                <!-- FAQ 1 -->
+                <div class="faq-card">
+                    <button class="faq-header-btn" type="button" aria-expanded="false">
+                        <span>Preciso ter o terreno para começar?</span>
+                        <span class="faq-toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-body">
+                        <div class="faq-answer-content">
+                            <p>Não! Nós oferecemos a modalidade de financiamento Aquisição de Terreno + Construção da Caixa Federal. A Caixa financia tanto a compra do lote quanto os recursos necessários para a construção da casa, tudo no mesmo contrato.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="faq-card">
+                    <button class="faq-header-btn" type="button" aria-expanded="false">
+                        <span>Como funcionam as parcelas durante a obra?</span>
+                        <span class="faq-toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-body">
+                        <div class="faq-answer-content">
+                            <p>Durante a fase de construção, você paga apenas os "juros de obra" proporcionais ao andamento da construção liberada pela Caixa. As parcelas definitivas de amortização da sua casa própria só começam a ser pagas após a entrega das chaves.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="faq-card">
+                    <button class="faq-header-btn" type="button" aria-expanded="false">
+                        <span>Consigo usar o meu saldo do FGTS?</span>
+                        <span class="faq-toggle-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                    </button>
+                    <div class="faq-body">
+                        <div class="faq-answer-content">
+                            <p>Sim! Você pode utilizar todo o seu saldo acumulado do FGTS para abater ou quitar o valor de entrada exigido pela Caixa Econômica Federal no seu processo de financiamento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Lead Capture / Contact Section -->
     <section id="contato" class="contact-section">
         <div class="container contact-container">
-            <div class="contact-text">
+            <div class="contact-text scroll-reveal">
                 <h2>Pronto para começar?</h2>
-                <p>Preencha os dados abaixo e venha fazer um orçamento conosco sem compromisso. Nosso time entrará em contato rapidamente.</p>
+                <p>Preencha os dados ao lado e venha fazer uma simulação e orçamento sem compromisso. Nosso time de especialistas entrará em contato rapidamente.</p>
                 <div class="contact-features">
                     <div class="feature-item">
-                        <span class="check-icon">✓</span> Atendimento personalizado
+                        <span class="check-icon"><i class="fa-solid fa-check"></i></span> Atendimento qualificado e exclusivo
                     </div>
                     <div class="feature-item">
-                        <span class="check-icon">✓</span> Transparência total
+                        <span class="check-icon"><i class="fa-solid fa-check"></i></span> Orçamento claro e transparente
                     </div>
                     <div class="feature-item">
-                        <span class="check-icon">✓</span> Profissionais qualificados
+                        <span class="check-icon"><i class="fa-solid fa-check"></i></span> Construção garantida pela Caixa Federal
                     </div>
                 </div>
                 
                 <div class="caixa-badge">
                     <img src="https://logodownload.org/wp-content/uploads/2014/02/caixa-logo.png" alt="Logo Caixa Econômica Federal" class="caixa-logo">
                     <div class="caixa-text">
-                        <span>Fazemos Financiamento pela <strong>Caixa Econômica Federal</strong></span>
+                        <span>Financiamento homologado pela <strong>Caixa Econômica Federal</strong></span>
                         <span class="caixa-subtext">(Terreno + Construção)</span>
                     </div>
                 </div>
             </div>
-            <div class="contact-form-wrapper">
+            
+            <div class="contact-form-wrapper scroll-reveal reveal-delay-2">
                 <form id="leadForm" class="lead-form">
                     <div class="form-group">
                         <label for="name">Nome Completo</label>
-                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                        <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
                     </div>
                     <div class="form-group">
-                        <label for="whatsapp">WhatsApp</label>
-                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(00) 00000-0000" required>
+                        <label for="whatsapp">Seu WhatsApp</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="(42) 99999-0000" required>
                     </div>
                     <div class="form-group">
-                        <label for="status">Qual a sua situação atual?</label>
+                        <label for="status">Qual a sua situação de terreno?</label>
                         <select id="status" name="status" required>
                             <option value="" disabled selected>Selecione uma opção</option>
-                            <option value="tenho_terreno">Já possuo um terreno</option>
-                            <option value="quero_comprar_terreno">Quero comprar terreno + construção</option>
-                            <option value="financiamento_caixa">Quero Financiamento Caixa (Terreno + Construção)</option>
-                            <option value="apenas_curiosidade">Apenas pesquisando</option>
+                            <option value="tenho_terreno">Já possuo terreno</option>
+                            <option value="quero_comprar_terreno">Quero terreno + construção</option>
+                            <option value="financiamento_caixa">Quero financiamento total pela Caixa</option>
+                            <option value="apenas_curiosidade">Apenas pesquisando opções</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full submit-btn glow-effect">Quero meu Orçamento</button>
-                    <p class="form-disclaimer">Seus dados estão seguros. Não enviamos spam.</p>
+                    <button type="submit" class="btn btn-primary btn-full submit-btn glow-effect">Solicitar Simulação Gratuita</button>
+                    <p class="form-disclaimer">Seus dados estão protegidos. Não enviamos mensagens indesejadas.</p>
                 </form>
             </div>
         </div>
@@ -153,10 +337,10 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container footer-content">
+        <div class="container footer-content scroll-reveal">
             <div class="footer-logo">
                 <h3>Projeto Saia do Aluguel</h3>
-                <p>Especialistas em Construção Civil</p>
+                <p>Construindo o futuro do seu lar próprio com você.</p>
             </div>
             <div class="footer-links">
                 <p>&copy; 2026 Projeto Saia do Aluguel. Todos os direitos reservados.</p>
@@ -165,7 +349,7 @@
     </footer>
 
     <!-- Botão flutuante do WhatsApp -->
-    <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Vim%20pelo%20site%20Projeto%20Saia%20do%20Aluguel." class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/5542999164041?text=Ol%C3%A1!%20Vim%20pelo%20site%20Projeto%20Saia%20do%20Aluguel." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Conversar no WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor">
             <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
         </svg>
